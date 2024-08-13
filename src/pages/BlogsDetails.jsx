@@ -14,7 +14,7 @@ const BlogsDetails = (props) => {
         <img
           src={image}
           alt={title}
-          className="mx-auto h-[300px] w-full object-cover transition duration-700 hover:scale-110"
+          className="mx-auto h-[300px] w-3/4 object-cover transition duration-700 hover:scale-110"
         />
       </div>
       <div className="container ">
@@ -22,7 +22,7 @@ const BlogsDetails = (props) => {
           {" "}
           written by {author} on {date}
         </p>
-        <h1 className="text-2xl font-semibold">{title}</h1>
+        <h1 className="text-3xl font-semibold mb-5">{title}</h1>
         <p>{description}</p>
       </div>
 

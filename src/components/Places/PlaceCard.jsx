@@ -8,13 +8,12 @@ const PlaceCard = ({
   description,
   price,
   type,
-  handleOrderPopup,
 }) => {
   return (
     <>
       <div
         className="shadow-lg transition-all duration-500 hover:shadow-xl dark:bg-slate-950 dark:text-white cursor-pointer"
-        onClick={handleOrderPopup}
+
       >
         <div className="overflow-hidden">
           <img
@@ -36,7 +35,7 @@ const PlaceCard = ({
               <p>{type}</p>
             </div>
             <div>
-              <p className="text-2xl font-bold">${price}</p>
+              <p className="text-xl font-bold">&#8377;{price}</p>
             </div>
           </div>
         </div>

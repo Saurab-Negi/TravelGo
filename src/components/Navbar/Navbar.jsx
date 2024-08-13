@@ -65,14 +65,15 @@ const Navbar = ({ handleOrderPopup }) => {
                 </li>
               </ul>
             </div>
-            <div className="flex items-center gap-4">
+            
+            <div className="flex items-center gap-4 sm:gap-8">
               <button
                 className="bg-gradient-to-r from-primary to-secondary hover:bg-bg-gradient-to-r hover:from-secondary hover:bg-primary transition-all duration-600 text-white px-4 py-1 rounded-full"
                 onClick={() => {
                   handleOrderPopup();
                 }}
               >
-                Sign In
+                Log In
               </button>
               {/* Mobile Hamburger icon */}
               <div className="md:hidden block">

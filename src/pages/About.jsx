@@ -29,6 +29,12 @@ const About = () => {
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi
             suscipit minus similique aliquam recusandae quisquam id nulla
             tempora voluptate vero.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima nihil, voluptatibus, non quidem sequi blanditiis distinctio quibusdam impedit asperiores, aut debitis facere earum soluta. Ut excepturi aliquid iure. Obcaecati, quae!
+            Possimus facere quas numquam tempora enim ipsa et sint ea magni corrupti cum vel fuga a hic eum reiciendis sunt, earum omnis, ex eius delectus architecto. Nesciunt a veniam natus!
+            Voluptatem repellat, minima eveniet hic quisquam vero magni deleniti aut eius! Beatae aliquam minima, odio dolor cupiditate animi placeat sunt quaerat maiores eveniet? Quod, odio minus! Corporis esse ad commodi!
+            Asperiores amet enim nam est aspernatur, consectetur repellendus ab molestiae id natus mollitia. Hic exercitationem necessitatibus numquam iure iste quisquam quas quaerat ipsa accusamus, quo placeat, ratione deleniti eveniet delectus.
+            Quae laboriosam architecto enim error itaque iure eveniet dolor beatae aut. Maxime libero nostrum accusamus deserunt impedit beatae est modi reprehenderit voluptates quasi, suscipit, voluptatibus ullam facere reiciendis quidem officia?
+            Voluptatibus fugit magni vero tenetur quibusdam quasi ducimus delectus, itaque ad architecto, nemo placeat amet accusantium doloremque sequi!<br /><br /> Doloremque architecto animi provident earum commodi illo. Doloribus rerum ullam temporibus voluptatum.
           </p>
         </div>
       </div>
