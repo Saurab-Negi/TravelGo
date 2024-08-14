@@ -1,7 +1,9 @@
 import React from "react";
 import { IoLocationSharp } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 const PlaceCard = ({
+  id,
   img,
   title,
   location,
@@ -10,11 +12,14 @@ const PlaceCard = ({
   type,
 }) => {
   return (
-    <>
-      <div
-        className="shadow-lg transition-all duration-500 hover:shadow-xl dark:bg-slate-950 dark:text-white cursor-pointer"
-
-      >
+    <Link
+      to={`/best-places/${title}`}
+      state={{ img, title, location, description, price, type }}
+      onClick={() => {
+        window.scrollTo(0, 0);
+      }}
+    >
+      <div className="shadow-lg transition-all duration-500 hover:shadow-xl dark:bg-slate-950 dark:text-white cursor-pointer">
         <div className="overflow-hidden">
           <img
             src={img}
@@ -40,7 +45,7 @@ const PlaceCard = ({
           </div>
         </div>
       </div>
-    </>
+    </Link>
   );
 };
 

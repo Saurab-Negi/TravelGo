@@ -2,8 +2,6 @@ import React from "react";
 import PlaceCard from "./PlaceCard";
 import { PlacesData } from "../../assets/rental";
 
-
-
 const Places = ({ handleOrderPopup }) => {
   return (
     <>

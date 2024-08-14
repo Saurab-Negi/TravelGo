@@ -4,6 +4,9 @@ export default {
   darkMode: "class",
   theme: {
     extend: {
+      shadow: {
+        shadow1: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
+      },
       colors: {
         // primary: "#00c3c7",
         primary: "#0287a8",

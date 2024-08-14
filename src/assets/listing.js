@@ -13,7 +13,7 @@ export const BlogsData = [
       date: "April 2, 2024",
     },
     {
-      id: 1,
+      id: 2,
       image: Img2,
       title: "Top Rentals in Gurgaon",
       description:
@@ -22,7 +22,7 @@ export const BlogsData = [
       date: "April 20, 2024",
     },
     {
-      id: 1,
+      id: 3,
       image: Img3,
       title: "Top Rentals in Pune",
       description:

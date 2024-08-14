@@ -11,6 +11,7 @@ import Img10 from "./places/place10.jpg";
 
 export const PlacesData = [
     {
+      id: 1,
       img: Img1,
       title: "Luxury Apartment in Mumbai",
       location: "Bandra, Mumbai",
@@ -19,6 +20,7 @@ export const PlacesData = [
       type: "Apartment",
     },
     {
+      id: 2,
       img: Img2,
       title: "Cozy Cottage in Shimla",
       location: "Mall Road, Shimla",
@@ -27,6 +29,7 @@ export const PlacesData = [
       type: "Cottage",
     },
     {
+      id: 3,
       img: Img3,
       title: "Modern Studio in Bangalore",
       location: "Indiranagar, Bangalore",
@@ -35,6 +38,7 @@ export const PlacesData = [
       type: "Studio",
     },
     {
+      id: 4,
       img: Img4,
       title: "Beachfront Villa in Goa",
       location: "Anjuna Beach, Goa",
@@ -43,6 +47,7 @@ export const PlacesData = [
       type: "Villa",
     },
     {
+      id: 5,
       img: Img5,
       title: "Heritage Haveli in Jaipur",
       location: "Pink City, Jaipur",
@@ -51,6 +56,7 @@ export const PlacesData = [
       type: "Haveli",
     },
     {
+      id: 6,
       img: Img6,
       title: "Penthouse in Delhi",
       location: "Connaught Place, Delhi",
@@ -59,6 +65,7 @@ export const PlacesData = [
       type: "Penthouse",
     },
     {
+      id: 7,
       img: Img7,
       title: "Houseboat in Srinagar",
       location: "Dal Lake, Srinagar",
@@ -67,6 +74,7 @@ export const PlacesData = [
       type: "Houseboat",
     },
     {
+      id: 8,
       img: Img8,
       title: "Eco-Friendly Cabin in Coorg",
       location: "Madikeri, Coorg",
@@ -75,6 +83,7 @@ export const PlacesData = [
       type: "Cabin",
     },
     {
+      id: 9,
       img: Img9,
       title: "Mountain View Chalet in Manali",
       location: "Solang Valley, Manali",
@@ -83,6 +92,7 @@ export const PlacesData = [
       type: "Chalet",
     },
     {
+      id: 10,
       img: Img10,
       title: "Palatial Suite in Udaipur",
       location: "Lake Pichola, Udaipur",

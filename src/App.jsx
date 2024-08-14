@@ -1,5 +1,4 @@
 import React from "react";
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./pages/Layout";
 import Home from "./pages/Home";
@@ -10,6 +9,8 @@ import About from "./pages/About";
 import BlogsDetails from "./pages/BlogsDetails";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import PlaceDetails from "./pages/PlaceDetails";
+import Cart from "./components/Cart/Cart";
 
 const App = () => {
   React.useEffect(() => {
@@ -30,7 +31,9 @@ const App = () => {
             <Route path="blogs" element={<Blogs />} />
             <Route path="blogs/:id" element={<BlogsDetails />} />
             <Route path="best-places" element={<PlacesRoute />} />
+            <Route path="best-places/:id" element={<PlaceDetails />} />
             <Route path="about" element={<About />} />
+            <Route path="cart" element={<Cart />} />
             <Route path="*" element={<NoPage />} />
           </Route>
         </Routes>

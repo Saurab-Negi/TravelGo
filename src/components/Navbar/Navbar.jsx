@@ -44,22 +44,22 @@ const Navbar = ({ handleOrderPopup }) => {
             <div className="hidden md:block">
               <ul className="flex items-center gap-12 sm:text-lg">
                 <li className="py-4">
-                  <NavLink to="/" activeClassName="active">
+                  <NavLink to="/" activeclassname="active">
                     Home
                   </NavLink>
                 </li>
                 <li className="py-4">
-                  <NavLink to="/blogs" activeClassName="active">
+                  <NavLink to="/blogs" activeclassname="active">
                     Blogs
                   </NavLink>
                 </li>
                 <li className="py-4">
-                  <NavLink to="/best-places" activeClassName="active">
+                  <NavLink to="/best-places" activeclassname="active">
                     Best Places
                   </NavLink>
                 </li>
                 <li className="py-4">
-                  <NavLink to="/about" activeClassName="active">
+                  <NavLink to="/about" activeclassname="active">
                     About
                   </NavLink>
                 </li>
