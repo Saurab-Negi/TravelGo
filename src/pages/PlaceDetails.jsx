@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { IoLocationSharp } from "react-icons/io5";
 import { useLocation } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
+import { StoreContext } from "../components/Context/StoreContext";
 
 const PlaceDetails = () => {
   const location = useLocation();
-  const { img, title, location: placeLocation, description, price, type } = location.state;
+  const { id, img, title, location: placeLocation, description, price, type } = location.state;
+  const {addToCart}= useContext(StoreContext);
 
   return (
     <div className="flex flex-col m-8">
@@ -51,7 +53,7 @@ const PlaceDetails = () => {
             <p className="text-xl font-bold">Total Charges :</p>
             <p>GST: &#8377; 500</p>
             <p>Total Price: &#8377;{price+500}</p>
-            <button onClick={()=>{addToCart()}} className="bg-blue-500 text-white py-2 rounded-xl">Add to Cart</button>
+            <button onClick={()=>{addToCart(id)}} className="bg-blue-500 text-white py-2 rounded-xl">Add to Cart</button>
         </div>
 
         <div className="flex flex-1 flex-col">

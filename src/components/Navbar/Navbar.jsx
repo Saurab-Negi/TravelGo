@@ -3,6 +3,9 @@ import Logo from "../../assets/logo.png";
 import { NavLink, Link } from "react-router-dom";
 import ResponsiveMenu from "./ResponsiveMenu";
 import { HiMenuAlt3, HiMenuAlt1 } from "react-icons/hi";
+import { FaCartShopping } from "react-icons/fa6";
+import { useContext } from "react";
+import { StoreContext } from "../Context/StoreContext";
 
 export const NavbarLinks = [
   {
@@ -24,6 +27,8 @@ export const NavbarLinks = [
 ];
 
 const Navbar = ({ handleOrderPopup }) => {
+
+  const {getTotalCartAmt}= useContext(StoreContext);
   const [showMenu, setShowMenu] = useState(false);
 
   const toggleMenu = () => {
@@ -67,6 +72,14 @@ const Navbar = ({ handleOrderPopup }) => {
             </div>
             
             <div className="flex items-center gap-4 sm:gap-8">
+              <div className="relative">
+                <Link to="/cart"><FaCartShopping className="text-2xl text-gray-600 cursor-pointer" /></Link>
+                {
+                  getTotalCartAmt()===0 ? "" : <div className=" absolute w-2 h-2 bg-red-600 rounded-full -top-2 -right-2"></div>
+                }
+                
+              </div>
+            
               <button
                 className="bg-gradient-to-r from-primary to-secondary hover:bg-bg-gradient-to-r hover:from-secondary hover:bg-primary transition-all duration-600 text-white px-4 py-1 rounded-full"
                 onClick={() => {

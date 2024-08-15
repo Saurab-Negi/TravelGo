@@ -11,6 +11,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import PlaceDetails from "./pages/PlaceDetails";
 import Cart from "./components/Cart/Cart";
+import Order from "./pages/Order/Order";
 
 const App = () => {
   React.useEffect(() => {
@@ -34,6 +35,7 @@ const App = () => {
             <Route path="best-places/:id" element={<PlaceDetails />} />
             <Route path="about" element={<About />} />
             <Route path="cart" element={<Cart />} />
+            <Route path="order" element={<Order />} />
             <Route path="*" element={<NoPage />} />
           </Route>
         </Routes>
