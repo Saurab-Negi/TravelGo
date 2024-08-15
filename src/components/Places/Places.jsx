@@ -16,7 +16,7 @@ const Places = ({ handleOrderPopup }) => {
           <h1 className="border-l-8 border-primary/50 my-6 pl-2 text-3xl font-bold">Top Rentals in India</h1>
           <form>
             <label htmlFor="sort">Sort: </label>
-            <select onChange={handleSortChange} className="bg-gray-50 px-1 my-6 text-sm border-2 border-gray-400 outline-none rounded-3xl" name="sort" id="sort">
+            <select onChange={handleSortChange} className="bg-gray-50 px-1 my-6 ml-2 text-sm border-2 border-gray-400 outline-none rounded-3xl" name="sort" id="sort">
               <option value="default">Default</option>
               <option value="lowest">Price: Low to High</option>
               <option value="highest">Price: High to Low</option>

@@ -1,6 +1,8 @@
 import React, { createContext, useEffect, useState } from "react";
 import { PlacesData } from "../../assets/rental";
 import { toast } from 'react-toastify';
+import 'react-date-range/dist/styles.css'; // main style file
+import 'react-date-range/dist/theme/default.css'; // theme css file
 
 // Create the context
 export const StoreContext = createContext(null);
@@ -9,6 +11,19 @@ export const StoreContext = createContext(null);
 const StoreProvider = (props) => {
   const [cartItems, setCartItems] = useState({});
   const [sortedPlacesData, setSortedPlacesData] = useState([...PlacesData]);
+
+  // Date Selector
+  const [dateRange, setDateRange]= useState([{
+    startDate: new Date(),
+    endDate: new Date(),
+    key: 'selection',
+  }])
+  const handleSelect= (ranges) =>{
+    setDateRange([ranges.selection])
+  }
+  const start= new Date(dateRange[0].startDate)
+  const end= new Date(dateRange[0].endDate)
+  const dayCount= Math.round(end-start)/ (1000*60*60*24)
 
   const addToCart = (itemId) => {
     if (!cartItems[itemId]) {
@@ -70,6 +85,7 @@ const StoreProvider = (props) => {
     removeFromCart,
     getTotalCartAmt,
     sorting,
+    handleSelect,dateRange,start,end,dayCount,
   };
 
   return (

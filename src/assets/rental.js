@@ -16,7 +16,7 @@ export const PlacesData = [
       title: "Luxury Apartment in Mumbai",
       location: "Bandra, Mumbai",
       description: "A beautiful 2 BHK apartment located in the heart of Bandra with stunning sea views and modern amenities.",
-      price: 6700,
+      price: 1700,
       type: "Apartment",
     },
     {
@@ -25,7 +25,7 @@ export const PlacesData = [
       title: "Cozy Cottage in Shimla",
       location: "Mall Road, Shimla",
       description: "A quaint and cozy cottage near Mall Road, perfect for a peaceful getaway in the hills.",
-      price: 5500,
+      price: 1500,
       type: "Cottage",
     },
     {
@@ -34,7 +34,7 @@ export const PlacesData = [
       title: "Modern Studio in Bangalore",
       location: "Indiranagar, Bangalore",
       description: "A chic studio apartment in Indiranagar, ideal for young professionals and couples.",
-      price: 6200,
+      price: 1200,
       type: "Studio",
     },
     {
@@ -43,7 +43,7 @@ export const PlacesData = [
       title: "Beachfront Villa in Goa",
       location: "Anjuna Beach, Goa",
       description: "A luxurious villa with a private pool, located right on Anjuna Beach.",
-      price: 12000,
+      price: 2000,
       type: "Villa",
     },
     {
@@ -52,7 +52,7 @@ export const PlacesData = [
       title: "Heritage Haveli in Jaipur",
       location: "Pink City, Jaipur",
       description: "Experience royal living in this traditional Rajasthani haveli in the heart of Jaipur.",
-      price: 8300,
+      price: 3000,
       type: "Haveli",
     },
     {
@@ -61,7 +61,7 @@ export const PlacesData = [
       title: "Penthouse in Delhi",
       location: "Connaught Place, Delhi",
       description: "A spacious penthouse offering panoramic views of the city, located in the prime area of Connaught Place.",
-      price: 15000,
+      price: 1700,
       type: "Penthouse",
     },
     {
@@ -70,7 +70,7 @@ export const PlacesData = [
       title: "Houseboat in Srinagar",
       location: "Dal Lake, Srinagar",
       description: "A traditional Kashmiri houseboat on Dal Lake, offering a unique and serene experience.",
-      price: 7000,
+      price: 3200,
       type: "Houseboat",
     },
     {
@@ -79,7 +79,7 @@ export const PlacesData = [
       title: "Eco-Friendly Cabin in Coorg",
       location: "Madikeri, Coorg",
       description: "A sustainable cabin surrounded by lush greenery, perfect for nature lovers.",
-      price: 4800,
+      price: 1800,
       type: "Cabin",
     },
     {
@@ -88,7 +88,7 @@ export const PlacesData = [
       title: "Mountain View Chalet in Manali",
       location: "Solang Valley, Manali",
       description: "A cozy chalet with breathtaking mountain views, located near Solang Valley.",
-      price: 5400,
+      price: 1400,
       type: "Chalet",
     },
     {
@@ -97,7 +97,7 @@ export const PlacesData = [
       title: "Palatial Suite in Udaipur",
       location: "Lake Pichola, Udaipur",
       description: "A grand suite overlooking Lake Pichola, offering a blend of luxury and tradition.",
-      price: 9600,
+      price: 1600,
       type: "Suite",
     },
   ];

@@ -1,13 +1,18 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { IoLocationSharp } from "react-icons/io5";
 import { useLocation } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
 import { StoreContext } from "../components/Context/StoreContext";
+import 'react-date-range/dist/styles.css'; // main style file
+import 'react-date-range/dist/theme/default.css'; // theme css file
+import { DateRange } from 'react-date-range';
 
 const PlaceDetails = () => {
   const location = useLocation();
   const { id, img, title, location: placeLocation, description, price, type } = location.state;
-  const {addToCart}= useContext(StoreContext);
+  const {addToCart, handleSelect, dateRange, dayCount}= useContext(StoreContext);
+
+  const today = new Date();
 
   return (
     <div className="flex flex-col m-8">
@@ -25,7 +30,7 @@ const PlaceDetails = () => {
             <p className="">{description}</p>
             <p className="opacity-70">Accomodation: {type}</p>
             <p className="flex items-center gap-2 opacity-70"><IoLocationSharp /> {placeLocation}</p>
-            <p className="opacity-70">4 guests | 2 bedrooms | 4 beds | 2 bathrooms</p>
+            <p className="opacity-70">2 guests | 1 bedroom | 1 Kitchen | 1 bathroom</p>
             <p className="flex items-center gap-2"><FaStar /> 5.0 4 Reviews</p>
             <div className="mt-10">
                 <h1 className="text-2xl font-bold">Hosted by Cathy</h1>
@@ -46,14 +51,29 @@ const PlaceDetails = () => {
 
         </div>
       </div>
-      <div className="flex flex-col md:flex-row items-center gap-16 mt-16">
-        <div className="w-full md:w-2/5 lg:w-1/3 flex flex-col gap-5 px-4 py-12 mx-10 rounded-md shadow-sm shadow-gray-400">
+      <div className="flex flex-col-reverse md:flex-row items-center gap-16 mt-16">
+        <div className="w-full md:w-2/5 lg:w-1/3 flex flex-col gap-1 px-4 py-4 mx-10 rounded-md shadow-sm shadow-gray-400">
             <p className="text-xl font-bold">{title}</p>
             <p>{description}</p>
-            <p className="text-xl font-bold">Total Charges :</p>
-            <p>GST: &#8377; 500</p>
-            <p>Total Price: &#8377;{price+500}</p>
-            <button onClick={()=>{addToCart(id)}} className="bg-blue-500 text-white py-2 rounded-xl">Add to Cart</button>
+            <div className="">
+              <p className="text-lg font-medium mt-2">Select Duration: </p>
+              <div className="">
+                <DateRange ranges={dateRange} onChange={handleSelect} minDate={today}/>
+                {dayCount > 1 ? (
+                  <p><b>Charges: </b>&#8377; {price} x {dayCount} nights</p>
+                ) : (
+                  <p><b>Charges: </b>&#8377; {price} x {dayCount} night</p>
+                )}
+              </div>
+            </div>
+            <p><b>Total Price: </b>&#8377; {price*dayCount}</p>
+            <button 
+              onClick={() => dayCount > 0 && addToCart(id)} 
+              disabled={dayCount === 0}
+              className={`mt-2 py-2 rounded-xl ${dayCount > 0 ? 'bg-cyan-500 text-white' : 'bg-cyan-600 text-white cursor-not-allowed'}`}
+            >
+              Add to Cart
+            </button>
         </div>
 
         <div className="flex flex-1 flex-col">

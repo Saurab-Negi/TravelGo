@@ -13,7 +13,6 @@ const PlaceCard = ({
   type,
 }) => {
 
-  const {addToCart}= useContext(StoreContext);
   return (
     <Link
       to={`/best-places/${id}`}
@@ -43,7 +42,7 @@ const PlaceCard = ({
             <div>              
               <p className="text-xl font-bold">&#8377;{price}</p>
             </div>
-            <button onClick={()=>{addToCart(id)}}  className="bg-gradient-to-r from-primary to-secondary hover:bg-bg-gradient-to-r hover:from-secondary hover:bg-primary transition-all duration-600 text-white px-4 py-1 rounded-full">Book</button>
+            <button className="bg-gradient-to-r from-primary to-secondary hover:bg-bg-gradient-to-r hover:from-secondary hover:bg-primary transition-all duration-600 text-white px-4 py-1 rounded-full">Book</button>
           </div>
         </div>
       </div>

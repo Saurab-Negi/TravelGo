@@ -5,14 +5,15 @@ import { useNavigate } from 'react-router-dom';
 
 const CartItems = () => {
 
-  const { PlacesData, cartItems, removeFromCart, getTotalCartAmt}= useContext(StoreContext);
+  const { PlacesData, cartItems, removeFromCart, getTotalCartAmt, dayCount, dateRange}= useContext(StoreContext);
   const navigate= useNavigate();
 
   return (
     <div className="mt-28 mx-4 lg:mx-16">
-      <div className="grid grid-cols-4 place-items-center text-sm md:text-xl font-semibold my-4">
+      <div className="grid grid-cols-[1fr_1fr_1fr_1fr_1fr] sm:grid-cols-[1fr_2fr_2fr_1fr_1fr] place-items-center text-sm md:text-xl font-semibold my-4">
         <p>Property</p>
         <p>Title</p>
+        <p>Duration</p>
         <p>Price</p>
         <p>Remove</p>
       </div>
@@ -22,10 +23,11 @@ const CartItems = () => {
                 if(cartItems[e.id]>0){
                     return (
                       <div key={i} className="">
-                        <div className="grid grid-cols-4 place-items-center my-4 text-xs md:text-base">
+                        <div className="grid grid-cols-[1fr_1fr_1fr_1fr_1fr] sm:grid-cols-[1fr_2fr_2fr_1fr_1fr] place-items-center my-4 text-xs md:text-base">
                             <img className="w-16 md:w-32 rounded-md" src={e.img} alt="" />
                             <p>{e.title}</p>
-                            <p>&#8377; {e.price+500}</p>
+                            <p>{dateRange[0].startDate.toDateString()} - {dateRange[0].endDate.toDateString()}</p>
+                            <p>&#8377; {e.price*dayCount}</p>
                             <MdDeleteForever className="text-2xl text-red-600 cursor-pointer" onClick={()=>{removeFromCart(e.id)}} />
                         </div>
                         <hr />
@@ -40,20 +42,20 @@ const CartItems = () => {
             <div className="">
               <div className="flex justify-between">
                 <p>Subtotal: </p>
-                <p>&#8377; {getTotalCartAmt()}</p>
+                <p>&#8377; {getTotalCartAmt()*dayCount}</p>
               </div>
               <hr className="my-3" />
               <div className="flex justify-between">
                 <p>Convenience Fee: </p>
-                <p>&#8377; {getTotalCartAmt()===0?0:1000}</p>
+                <p>&#8377; {getTotalCartAmt()*dayCount===0?0:1000}</p>
               </div>
               <hr className="my-3" />
               <div className="flex justify-between">
                 <b>Total Amount: </b>
-                <p>&#8377; {getTotalCartAmt()===0?0:getTotalCartAmt()+1000}</p>
+                <p>&#8377; {getTotalCartAmt()*dayCount===0?0:getTotalCartAmt()*dayCount+1000}</p>
               </div>
             </div>
-            <button onClick={() =>navigate('/order')} className='text-white bg-primary rounded-xl py-3 '>Proceed To Checkout</button>
+            <button onClick={() =>navigate('/order')} className='text-white bg-cyan-500 rounded-xl py-3 '>Proceed To Checkout</button>
           </div>
           <div className="flex flex-1">
             <div className="">
