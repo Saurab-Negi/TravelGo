@@ -10,9 +10,23 @@ import { DateRange } from 'react-date-range';
 const PlaceDetails = () => {
   const location = useLocation();
   const { id, img, title, location: placeLocation, description, price, type } = location.state;
-  const {addToCart, handleSelect, dateRange, dayCount}= useContext(StoreContext);
+  const { addToCart, handleSelect, dateRange, dayCount } = useContext(StoreContext);
 
   const today = new Date();
+
+  const isLoggedIn = localStorage.getItem("loggedIn") === "true";
+
+  const handleAddToCart = () => {
+    if (!isLoggedIn) {
+      alert("You must be logged in to add items to the cart.");
+      return;
+    }
+    if (dayCount <= 0) {
+      alert("Please select a valid date range.");
+      return;
+    }
+    addToCart(id);
+  };
 
   return (
     <div className="flex flex-col m-8">
@@ -58,7 +72,7 @@ const PlaceDetails = () => {
             <div className="">
               <p className="text-lg font-medium mt-2">Select Duration: </p>
               <div className="">
-                <DateRange ranges={dateRange} onChange={handleSelect} minDate={today}/>
+                <DateRange ranges={dateRange} onChange={handleSelect} minDate={today} />
                 {dayCount > 1 ? (
                   <p><b>Charges: </b>&#8377; {price} x {dayCount} nights</p>
                 ) : (
@@ -66,9 +80,9 @@ const PlaceDetails = () => {
                 )}
               </div>
             </div>
-            <p><b>Total Price: </b>&#8377; {price*dayCount}</p>
+            <p><b>Total Price: </b>&#8377; {price * dayCount}</p>
             <button 
-              onClick={() => dayCount > 0 && addToCart(id)} 
+              onClick={handleAddToCart} 
               disabled={dayCount === 0}
               className={`mt-2 py-2 rounded-xl ${dayCount > 0 ? 'bg-cyan-500 text-white' : 'bg-cyan-600 text-white cursor-not-allowed'}`}
             >

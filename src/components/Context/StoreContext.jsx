@@ -26,13 +26,22 @@ const StoreProvider = (props) => {
   const dayCount= Math.round(end-start)/ (1000*60*60*24)
 
   const addToCart = (itemId) => {
-    if (!cartItems[itemId]) {
-      setCartItems((prev) => ({ ...prev, [itemId]: 1 }));
-      toast("Added to Cart");
-    } else {
-      setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
-      toast("Added to Cart");
+    if (!localStorage.getItem("loggedIn")) {
+      toast("Please log in to add items to the cart.");
+      return;
     }
+    if (dayCount <= 0) {
+      toast("Please select a valid date range.");
+      return;
+    }
+    setCartItems((prev) => {
+      if (!prev[itemId]) {
+        return { ...prev, [itemId]: 1 };
+      } else {
+        return { ...prev, [itemId]: prev[itemId] + 1 };
+      }
+    });
+    toast("Added to Cart");
   };
 
   const removeFromCart = (itemId) => {

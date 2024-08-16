@@ -8,6 +8,19 @@ const CartItems = () => {
   const { PlacesData, cartItems, removeFromCart, getTotalCartAmt, dayCount, dateRange}= useContext(StoreContext);
   const navigate= useNavigate();
 
+  const isCartEmpty = () => {
+    return Object.keys(cartItems).every((key) => cartItems[key] === 0);
+  };
+
+  // Handle checkout navigation
+  const handleCheckout = () => {
+    if (isCartEmpty()) {
+      alert('Your cart is empty');
+    } else {
+      navigate('/order');
+    }
+  };
+
   return (
     <div className="mt-28 mx-4 lg:mx-16">
       <div className="grid grid-cols-[1fr_1fr_1fr_1fr_1fr] sm:grid-cols-[1fr_2fr_2fr_1fr_1fr] place-items-center text-sm md:text-xl font-semibold my-4">
@@ -55,7 +68,7 @@ const CartItems = () => {
                 <p>&#8377; {getTotalCartAmt()*dayCount===0?0:getTotalCartAmt()*dayCount+1000}</p>
               </div>
             </div>
-            <button onClick={() =>navigate('/order')} className='text-white bg-cyan-500 rounded-xl py-3 '>Proceed To Checkout</button>
+            <button onClick={handleCheckout} className='text-white bg-cyan-500 rounded-xl py-3 '>Proceed To Checkout</button>
           </div>
           <div className="flex flex-1">
             <div className="">

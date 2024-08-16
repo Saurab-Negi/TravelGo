@@ -66,7 +66,6 @@ const Footer = () => {
                           to={link.link}
                           onClick={() => window.scrollTo(0, 0)}
                         >
-                          <span>&#11162;</span>
                           <span>{link.title}</span>
                         </Link>
                       </li>
