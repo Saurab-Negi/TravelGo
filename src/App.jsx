@@ -13,6 +13,7 @@ import PlaceDetails from "./pages/PlaceDetails";
 import Cart from "./components/Cart/Cart";
 import Order from "./pages/Order/Order";
 import Payment from "./pages/Payment";
+import Successful from "./pages/Successful";
 
 const App = () => {
   React.useEffect(() => {
@@ -38,6 +39,7 @@ const App = () => {
             <Route path="cart" element={<Cart />} />
             <Route path="order" element={<Order />} />
             <Route path="payment" element={<Payment />} />
+            <Route path="success" element={<Successful />} />
             <Route path="*" element={<NoPage />} />
           </Route>
         </Routes>

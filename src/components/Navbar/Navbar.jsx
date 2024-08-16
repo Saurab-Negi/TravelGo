@@ -37,7 +37,7 @@ const Navbar = ({ handleOrderPopup }) => {
 
   return (
     <nav className="fixed top-0 right-0 w-full z-50 bg-white backdrop-blur-sm text-black shadow-md">
-      <div className="container py-3 sm:py-1">
+      <div className="container py-1">
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-4 font-bold text-2xl">
             <Link to="/" onClick={() => window.scrollTo(0, 0)}>

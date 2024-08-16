@@ -64,6 +64,11 @@ const StoreProvider = (props) => {
     return totalAmt;
   };
 
+  // Add a function to clear the cart
+  const clearCart = () => {
+    setCartItems({});
+  };
+
   const sorting = (sortType) => {
     const sortedData = [...PlacesData];
     switch (sortType) {
@@ -93,6 +98,7 @@ const StoreProvider = (props) => {
     addToCart,
     removeFromCart,
     getTotalCartAmt,
+    clearCart,
     sorting,
     handleSelect,dateRange,start,end,dayCount,
   };

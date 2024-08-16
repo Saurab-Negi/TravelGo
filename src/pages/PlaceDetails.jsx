@@ -29,8 +29,8 @@ const PlaceDetails = () => {
   };
 
   return (
-    <div className="flex flex-col m-8">
-      <div className="flex flex-col md:flex-row gap-10 mt-16">
+    <div className="flex flex-col mx-4 md:mx-12">
+      <div className="flex flex-col md:flex-row gap-10 mt-28">
         <div>
             <img
             src={img}
@@ -66,13 +66,13 @@ const PlaceDetails = () => {
         </div>
       </div>
       <div className="flex flex-col-reverse md:flex-row items-center gap-16 mt-16">
-        <div className="w-full md:w-2/5 lg:w-1/3 flex flex-col gap-1 px-4 py-4 mx-10 rounded-md shadow-sm shadow-gray-400">
+        <div className=" flex-1 flex flex-col gap-1 px-4 py-4 md:ml-20 rounded-md shadow-sm shadow-gray-400">
             <p className="text-xl font-bold">{title}</p>
             <p>{description}</p>
             <div className="">
               <p className="text-lg font-medium mt-2">Select Duration: </p>
               <div className="">
-                <DateRange ranges={dateRange} onChange={handleSelect} minDate={today} />
+                <DateRange className="" ranges={dateRange} onChange={handleSelect} minDate={today} />
                 {dayCount > 1 ? (
                   <p><b>Charges: </b>&#8377; {price} x {dayCount} nights</p>
                 ) : (
@@ -90,7 +90,7 @@ const PlaceDetails = () => {
             </button>
         </div>
 
-        <div className="flex flex-1 flex-col">
+        <div className="flex flex-col">
           <h1 className="text-2xl font-bold mb-4">About this place</h1>
           <p>&#x2713; Apartment in luxury residence very well located, close to the Porte de Versailles, in a very nice neighborhood  of Issy-les-Moulineaux (Corentin-Celton) and adjoining an exceptional public garden.<br></br><br></br>
 
