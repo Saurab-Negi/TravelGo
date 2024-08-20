@@ -1,5 +1,5 @@
 # Website Live
-travello-go.netlify.app
+https://travello-go.netlify.app
 
 # Overview
 Tech stak used:
