@@ -1,19 +1,21 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "./pages/Layout";
-import Home from "./pages/Home";
-import Blogs from "./pages/Blogs";
-import NoPage from "./pages/NoPage";
-import PlacesRoute from "./pages/PlacesRoute";
-import About from "./pages/About";
-import BlogsDetails from "./pages/BlogsDetails";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import PlaceDetails from "./pages/PlaceDetails";
-import Cart from "./components/Cart/Cart";
-import Order from "./pages/Order/Order";
-import Payment from "./pages/Payment";
-import Successful from "./pages/Successful";
+import Loader from "./components/Loader/Loader"
+
+const Layout = lazy(() => import("./pages/Layout"));
+const Home = lazy(() => import("./pages/Home"));
+const Blogs = lazy(() => import("./pages/Blogs"));
+const NoPage = lazy(() => import("./pages/NoPage"));
+const PlacesRoute = lazy(() => import("./pages/PlacesRoute"));
+const About = lazy(() => import("./pages/About"));
+const BlogsDetails = lazy(() => import("./pages/BlogsDetails"));
+const PlaceDetails = lazy(() => import("./pages/PlaceDetails"));
+const Cart = lazy(() => import("./components/Cart/Cart"));
+const Order = lazy(() => import("./pages/Order/Order"));
+const Payment = lazy(() => import("./pages/Payment"));
+const Successful = lazy(() => import("./pages/Successful"));
 
 const App = () => {
   React.useEffect(() => {
@@ -23,11 +25,11 @@ const App = () => {
       easing: "ease-in-sine",
       delay: 100,
     });
-    AOS.refresh();
   }, []);
+
   return (
-    <>
-      <BrowserRouter>
+    <BrowserRouter>
+      <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
@@ -43,8 +45,8 @@ const App = () => {
             <Route path="*" element={<NoPage />} />
           </Route>
         </Routes>
-      </BrowserRouter>
-    </>
+      </Suspense>
+    </BrowserRouter>
   );
 };
 
