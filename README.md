@@ -1,5 +1,5 @@
 # Website Live
-https://totality-frontend-challenge-saurabneg.netlify.app
+https://travello-go.netlify.app
 
 # Overview
 Tech stak used:
