@@ -2,9 +2,9 @@ import React, { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Layout from "./pages/Layout";
 import Loader from "./components/Loader/Loader"
 
-const Layout = lazy(() => import("./pages/Layout"));
 const Home = lazy(() => import("./pages/Home"));
 const Blogs = lazy(() => import("./pages/Blogs"));
 const NoPage = lazy(() => import("./pages/NoPage"));
