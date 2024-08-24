@@ -57,7 +57,7 @@ const Navbar = ({ handleOrderPopup }) => {
           </div>
           <div className="flex items-center gap-4 sm:gap-8">
             <div className="relative">
-              <Link to="/cart">
+              <Link to="/cart" onClick={() => window.scrollTo(0, 0)}>
                 <FaCartShopping className="text-2xl text-gray-600 cursor-pointer" />
               </Link>
               {getTotalCartAmt() > 0 && (

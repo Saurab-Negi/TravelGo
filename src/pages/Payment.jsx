@@ -151,7 +151,10 @@ export default function App() {
                   {errors.cvv && <p className="text-red-500">{errors.cvv}</p>}
                 </MDBCol>
               </MDBRow>
-              <MDBBtn color="success" size="lg" block onClick={handlePayment}>
+              <MDBBtn color="success" size="lg" block onClick={() => {
+                handlePayment();
+                window.scrollTo(0, 0);
+              }}>
                 Payment
               </MDBBtn>
             </MDBCardBody>

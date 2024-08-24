@@ -73,7 +73,7 @@ const Order = () => {
             </div>
           </div>
           <button 
-            onClick={() => navigate('/payment')} 
+            onClick={() => { navigate('/payment'); window.scrollTo(0, 0);} }
             className={`text-white bg-cyan-500 rounded-xl py-3 ${!isFormValid ? 'opacity-50 cursor-not-allowed' : ''}`} 
             disabled={!isFormValid}
           >

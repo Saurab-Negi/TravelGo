@@ -2,8 +2,11 @@ import React, { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Layout from "./pages/Layout";
+
 import Loader from "./components/Loader/Loader"
+import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
+import OrderPopup from "./components/OrderPopup/OrderPopup";
 
 const Home = lazy(() => import("./pages/Home"));
 const Blogs = lazy(() => import("./pages/Blogs"));
@@ -18,6 +21,13 @@ const Payment = lazy(() => import("./pages/Payment"));
 const Successful = lazy(() => import("./pages/Successful"));
 
 const App = () => {
+
+  const [orderPopup, setOrderPopup] = React.useState(false);
+
+  const handleOrderPopup = () => {
+    setOrderPopup(!orderPopup);
+  };
+
   React.useEffect(() => {
     AOS.init({
       offset: 100,
@@ -29,9 +39,10 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <Suspense fallback={<Loader />}>
-        <Routes>
-          <Route path="/" element={<Layout />}>
+      <Navbar handleOrderPopup={handleOrderPopup} />
+        <Suspense fallback={<Loader />}>
+          <Routes>
+
             <Route index element={<Home />} />
             <Route path="blogs" element={<Blogs />} />
             <Route path="blogs/:id" element={<BlogsDetails />} />
@@ -43,9 +54,11 @@ const App = () => {
             <Route path="payment" element={<Payment />} />
             <Route path="success" element={<Successful />} />
             <Route path="*" element={<NoPage />} />
-          </Route>
-        </Routes>
-      </Suspense>
+
+          </Routes>
+        </Suspense>
+      <Footer />
+      <OrderPopup orderPopup={orderPopup} setOrderPopup={setOrderPopup} />
     </BrowserRouter>
   );
 };

@@ -82,7 +82,10 @@ const PlaceDetails = () => {
             </div>
             <p><b>Total Price: </b>&#8377; {price * dayCount}</p>
             <button 
-              onClick={handleAddToCart} 
+              onClick= {() => {
+                handleAddToCart();
+                window.scrollTo(0, 0);
+              }}
               disabled={dayCount === 0}
               className={`mt-2 py-2 rounded-xl ${dayCount > 0 ? 'bg-cyan-500 text-white' : 'bg-cyan-600 text-white cursor-not-allowed'}`}
             >

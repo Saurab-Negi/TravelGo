@@ -68,7 +68,11 @@ const CartItems = () => {
                 <p>&#8377; {getTotalCartAmt()*dayCount===0?0:getTotalCartAmt()*dayCount+1000}</p>
               </div>
             </div>
-            <button onClick={handleCheckout} className='text-white bg-cyan-500 rounded-xl py-3 '>Proceed To Checkout</button>
+            <button onClick={() => {
+              handleCheckout();
+              window.scrollTo(0, 0);
+            }}          
+             className='text-white bg-cyan-500 rounded-xl py-3 '>Proceed To Checkout</button>
           </div>
           <div className="flex flex-1">
             <div className="">
