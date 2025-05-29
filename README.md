@@ -1,6 +1,10 @@
 # Website Live
 Website is live at https://travello-go.netlify.app
 
+## Run with Docker
+docker build -t travellogo .
+docker run -p 5173:5173 travellogo
+
 # Overview
 Tech stak used:
 1. ReactJS
